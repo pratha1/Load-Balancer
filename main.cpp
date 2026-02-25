@@ -1,5 +1,5 @@
 #include <iostream>
-#include "LoadBalancer.h"
+#include "Switch.h"
 
 int main() {
     int servers, time;
@@ -10,8 +10,8 @@ int main() {
     std::cout << "Simulation Time: ";
     std::cin >> time;
 
-    LoadBalancer lb(servers, 50);
-    lb.run(time);
+    Switch networkSwitch(servers);
+    networkSwitch.run(time);
 
     return 0;
 }

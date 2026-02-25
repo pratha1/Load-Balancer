@@ -7,16 +7,16 @@ WebServer::WebServer(int id){
     totalProcessed = 0;
 }
 
-bool WebServer::isBusy(){
+bool WebServer::isBusy() const{
     return busy;
 }
 
-void WebServer::assignRequest(Request req){
+void WebServer::assignRequest(const Request& req){
     busy = true;
     remainingTime = req.processTime;
 }
 
-void WebServer::processCycle(){
+void WebServer::processRequest(){
     if (busy){
         remainingTime--;
         if (remainingTime <= 0){
@@ -26,6 +26,6 @@ void WebServer::processCycle(){
     }
 }
 
-int WebServer::getTotalProcessed(){
+int WebServer::getTotalProcessed() const{
     return totalProcessed;
 }

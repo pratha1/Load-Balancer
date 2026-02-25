@@ -13,10 +13,10 @@ private:
 public:
     WebServer(int id);
     
-    bool isBusy();
-    void assignRequest(Request req);
-    void processCycle();
-    int getTotalProcessed();   
+    bool isBusy() const;
+    void assignRequest(const Request& req);
+    void processRequest();
+    int getTotalProcessed() const;   
 };
 
 #endif

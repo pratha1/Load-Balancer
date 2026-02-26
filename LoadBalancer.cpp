@@ -105,6 +105,17 @@ void LoadBalancer::addRequest(const Request& req) {
 }
 
 /**
+ * @brief Captures the current queue size as the starting queue size.
+ *
+ * Called by Switch immediately after the initial queue fill so the
+ * summary log can report the baseline queue depth before any processing.
+ */
+void LoadBalancer::setStartingQueueSize() {
+    startingQueueSize = requestQueue.size();
+}
+
+
+/**
  * @brief Assigns queued requests to available idle servers.
  * 
  * Each idle server receives one request from the front of the queue.
@@ -188,20 +199,35 @@ void LoadBalancer::run(int duration) {
  * - Per-server processed request totals
  */
 void LoadBalancer::printSummary() {
-    std::cout << "\nTotal Requests: " << totalRequests << "\n";
-    std::cout << "Blocked Requests: " << blockedRequests << "\n";
-    std::cout << "Final Servers: " << servers.size() << "\n";
+    std::cout << "\nTotal Requests: "<< totalRequests<< "\n";
+    std::cout << "Blocked Requests: "<< blockedRequests<< "\n";
+    std::cout << "Final Servers: "<< servers.size()<< "\n";
 
     for (size_t i = 0; i < servers.size(); i++)
         std::cout << "Server " << i << " processed "
                   << servers[i]->getTotalProcessed() << " requests\n";
 
-    // to log summary 
-    logFile << "\n--- Summary ---\n";
-    logFile << "Total Requests: " << totalRequests << "\n";
-    logFile << "Blocked Requests: " << blockedRequests << "\n";
-    logFile << "Final Servers: " << servers.size() << "\n";
-    for (size_t i = 0; i < servers.size(); i++)
-        logFile << "Server " << i << " processed "
-                << servers[i]->getTotalProcessed() << " requests\n";
+    //log file output
+    logFile << "\n==================== SUMMARY ====================\n";
+    logFile << "Starting Queue Size: " << startingQueueSize << "\n";
+    logFile << "Ending Queue Size: " << requestQueue.size() << "\n";
+    logFile << "Task Time Range: 1 to "
+            << Config::MAX_PROCESS_TIME << " cycles\n";
+
+    logFile << "Total Requests Accepted: "<< totalRequests<< "\n";
+    logFile << "Total Requests Blocked: "<< blockedRequests<< "\n";
+    logFile << "Final Server Count: " << servers.size()<< "\n";
+
+    int totalCompleted = 0;
+    for (size_t i = 0; i < servers.size(); i++) {
+        int handled = servers[i]->getTotalProcessed();
+        totalCompleted += handled;
+        logFile << "  Server " << i << " processed " << handled << " requests\n";
+    }
+    logFile << "Total Completed: " << totalCompleted << "\n";
+    logFile << "Requests Still in Queue: " << requestQueue.size() << "\n";
+    int attempted = totalRequests + blockedRequests;
+    if (attempted > 0)
+        logFile << "Firewall Block Rate:      "
+                << (100.0 * blockedRequests / attempted) << "%\n";
 }

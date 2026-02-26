@@ -1,0 +1,73 @@
+Blocked IP: 10.112.99.26
+Blocked IP: 10.159.232.58
+Blocked IP: 10.181.111.32
+Scaling Down
+Blocked IP: 10.62.33.135
+Blocked IP: 10.2.220.68
+Scaling Down
+Blocked IP: 10.208.102.136
+Blocked IP: 10.12.200.198
+Blocked IP: 10.51.10.141
+Blocked IP: 10.62.202.95
+Blocked IP: 10.65.117.157
+Blocked IP: 10.204.189.196
+Blocked IP: 10.116.44.240
+Blocked IP: 10.130.22.239
+Blocked IP: 10.147.170.125
+Blocked IP: 10.80.169.174
+Blocked IP: 10.171.156.127
+Blocked IP: 10.243.221.152
+Blocked IP: 192.168.218.176
+Blocked IP: 10.247.14.163
+Blocked IP: 10.230.200.43
+Blocked IP: 10.203.8.52
+Blocked IP: 10.143.99.25
+Blocked IP: 10.63.93.125
+Blocked IP: 10.158.41.160
+Blocked IP: 10.24.57.62
+Blocked IP: 10.235.65.38
+Blocked IP: 10.202.2.13
+Blocked IP: 10.215.235.27
+Blocked IP: 10.83.20.103
+Blocked IP: 10.223.212.79
+Blocked IP: 10.63.164.237
+Blocked IP: 10.54.7.218
+Blocked IP: 10.62.254.150
+Blocked IP: 10.165.30.113
+Blocked IP: 10.41.5.93
+Blocked IP: 10.3.237.106
+Blocked IP: 10.10.160.65
+Blocked IP: 10.91.38.174
+Blocked IP: 10.248.210.62
+Blocked IP: 10.196.4.15
+Scaling Up
+Blocked IP: 10.66.180.78
+Blocked IP: 10.104.120.161
+Blocked IP: 10.137.226.161
+Blocked IP: 10.97.205.55
+Blocked IP: 10.22.16.89
+Blocked IP: 10.153.236.237
+Blocked IP: 10.110.71.30
+Blocked IP: 10.143.174.198
+Blocked IP: 10.116.90.243
+Blocked IP: 10.115.97.153
+Scaling Down
+Blocked IP: 10.219.33.15
+Blocked IP: 10.181.173.94
+Blocked IP: 10.5.123.183
+Blocked IP: 10.82.53.106
+Blocked IP: 10.21.109.232
+Blocked IP: 10.219.103.197
+
+--- Summary ---
+Total Requests: 15406
+Blocked Requests: 56
+Final Servers: 8
+Server 0 processed 1821 requests
+Server 1 processed 1792 requests
+Server 2 processed 1826 requests
+Server 3 processed 1845 requests
+Server 4 processed 1824 requests
+Server 5 processed 1813 requests
+Server 6 processed 1857 requests
+Server 7 processed 1822 requests

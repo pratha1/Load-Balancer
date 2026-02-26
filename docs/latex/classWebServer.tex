@@ -1,0 +1,111 @@
+\hypertarget{classWebServer}{}\doxysection{Web\+Server Class Reference}
+\label{classWebServer}\index{WebServer@{WebServer}}
+
+
+Simulates a web server that processes requests.  
+
+
+
+
+{\ttfamily \#include $<$Web\+Server.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebServer_a5044757cd8574d3f62a7eec5d51fb00f}{Web\+Server}} (int id)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classWebServer}{Web\+Server}} with a unique ID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebServer_a9a382239f638ad2b1f57621a37430874}{is\+Busy}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the server is currently processing a request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebServer_a4b56881caf0fac2ff1c1761cd8f22cc3}{assign\+Request}} (const \mbox{\hyperlink{structRequest}{Request}} \&req)
+\begin{DoxyCompactList}\small\item\em Assigns a request to the server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebServer_a366118f1b6a0171b51ac2f3264dd4d22}{process\+Cycle}} ()
+\begin{DoxyCompactList}\small\item\em Advances the server by one clock cycle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWebServer_a395490ea82cdd35989c1f23736117d86}{get\+Total\+Processed}} () const
+\begin{DoxyCompactList}\small\item\em Returns the total number of completed requests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simulates a web server that processes requests. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWebServer_a5044757cd8574d3f62a7eec5d51fb00f}\label{classWebServer_a5044757cd8574d3f62a7eec5d51fb00f}} 
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{WebServer()}{WebServer()}}
+{\footnotesize\ttfamily Web\+Server\+::\+Web\+Server (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classWebServer}{Web\+Server}} with a unique ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Unique identifier for the server. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebServer_a4b56881caf0fac2ff1c1761cd8f22cc3}\label{classWebServer_a4b56881caf0fac2ff1c1761cd8f22cc3}} 
+\index{WebServer@{WebServer}!assignRequest@{assignRequest}}
+\index{assignRequest@{assignRequest}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{assignRequest()}{assignRequest()}}
+{\footnotesize\ttfamily void Web\+Server\+::assign\+Request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structRequest}{Request}} \&}]{req }\end{DoxyParamCaption})}
+
+
+
+Assigns a request to the server. 
+
+The server becomes busy and sets its remaining processing time based on the request\textquotesingle{}s process time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \mbox{\hyperlink{structRequest}{Request}} to process. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebServer_a395490ea82cdd35989c1f23736117d86}\label{classWebServer_a395490ea82cdd35989c1f23736117d86}} 
+\index{WebServer@{WebServer}!getTotalProcessed@{getTotalProcessed}}
+\index{getTotalProcessed@{getTotalProcessed}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{getTotalProcessed()}{getTotalProcessed()}}
+{\footnotesize\ttfamily int Web\+Server\+::get\+Total\+Processed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the total number of completed requests. 
+
+\begin{DoxyReturn}{Returns}
+Number of processed requests. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebServer_a9a382239f638ad2b1f57621a37430874}\label{classWebServer_a9a382239f638ad2b1f57621a37430874}} 
+\index{WebServer@{WebServer}!isBusy@{isBusy}}
+\index{isBusy@{isBusy}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{isBusy()}{isBusy()}}
+{\footnotesize\ttfamily bool Web\+Server\+::is\+Busy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the server is currently processing a request. 
+
+\begin{DoxyReturn}{Returns}
+True if server is busy, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebServer_a366118f1b6a0171b51ac2f3264dd4d22}\label{classWebServer_a366118f1b6a0171b51ac2f3264dd4d22}} 
+\index{WebServer@{WebServer}!processCycle@{processCycle}}
+\index{processCycle@{processCycle}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{processCycle()}{processCycle()}}
+{\footnotesize\ttfamily void Web\+Server\+::process\+Cycle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Advances the server by one clock cycle. 
+
+Decrements remaining processing time. When processing completes\+:
+\begin{DoxyItemize}
+\item Server becomes idle
+\item Total processed counter increments 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{WebServer_8h}{Web\+Server.\+h}}\item 
+\mbox{\hyperlink{WebServer_8cpp}{Web\+Server.\+cpp}}\end{DoxyCompactItemize}
